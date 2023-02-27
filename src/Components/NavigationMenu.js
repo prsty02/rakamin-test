@@ -10,6 +10,9 @@ const NavigationMenu = (props) => {
                 <li className="p-3 border-b">
                     <Link to="about" onClick={props.close}>About</Link>
                 </li>
+                <li className="p-3 border-b">
+                    <Link to="contact" onClick={props.close}>Contact</Link>
+                </li>
             </ul>
         </div>
     )
