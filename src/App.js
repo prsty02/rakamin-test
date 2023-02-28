@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./Components/Header";
 import Contact from "./Views/Contact";
 import Home from "./Views/Home";
+import Product from "./Views/Product";
 
 function App() {
   return (
@@ -11,8 +12,9 @@ function App() {
         <div className="p-3 h-5/6">
           <Routes>
             <Route exact path="/" element={ <Home/> } />
-            <Route exact path="/about" element={ <Home/> } />
-            <Route exact path="/contact" element={ <Contact/> } />
+            <Route path="/about" element={ <Home/> } />
+            <Route path="/contact" element={ <Contact/> } />
+            <Route path="/product/:id" element={ <Product/> } />
           </Routes>
         </div>
       </BrowserRouter>
