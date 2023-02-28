@@ -19,7 +19,7 @@ const Home = () => {
 
     if (items.loading) {
         content = 
-            <div className="col-span-2 flex flex-col items-center w-5/6 h-full">
+            <div className="col-span-2 flex flex-col items-center w-full h-full">
                 <Loader />
             </div>
     }

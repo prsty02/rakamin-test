@@ -29,36 +29,38 @@ const Product = () => {
 
     if (item.data) {
         content = 
-            <div className="flex flex-col md:flex-row items-center w-5/6 h-max">
-                <div className="w-full md:w-1/2">
-                    <img
-                        className="w-full object-cover rounded-xl"
-                        src={item.data.image}
-                        alt={item.data.name}
+            <div>
+                <Link to={".."} className="w-full flex justify-end pb-2">
+                    <FontAwesomeIcon
+                        icon={faArrowAltCircleLeft}
+                        size="xl"
                     />
-                </div>
-                <div className=" w-full md:w-1/2 h-full p-5 flex flex-col justify-start">
-                    <Link to={".."} className="w-full flex justify-end">
-                        <FontAwesomeIcon
-                            icon={faArrowAltCircleLeft}
-                            size="xl"
+                </Link>
+                <div className="flex flex-col md:flex-row items-center w-full h-max">
+                    <div className="w-full md:w-1/2">
+                        <img
+                            className="w-full object-cover rounded-xl"
+                            src={item.data.image}
+                            alt={item.data.name}
                         />
-                    </Link>
-                    <h2 className="text-xl pb-3 font-bold">
-                        {item.data.name}
-                    </h2>
-                    <div>
-                        Price : ${item.data.price}
                     </div>
-                    <div className="w-full border-t">
-                        <h3>Description :</h3>
-                            {item.data.description}
+                    <div className=" w-full md:w-1/2 h-full p-5 flex flex-col justify-start">
+                        <h2 className="text-xl pb-3 font-bold">
+                            {item.data.name}
+                        </h2>
+                        <div>
+                            Price : ${item.data.price}
+                        </div>
+                        <div className="w-full border-t">
+                            <h3>Description :</h3>
+                                {item.data.description}
+                        </div>
                     </div>
                 </div>
             </div>
     }
     return(
-        <div className="flex flex-col items-center py-4 h-5/6">
+        <div className="flex flex-col items-center py-4 px-3 h-5/6">
             {content}
         </div>
     )
