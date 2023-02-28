@@ -1,39 +1,17 @@
 import { faArrowAltCircleLeft } from "@fortawesome/free-regular-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import axios from "axios"
-import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import Error from "../Components/Error"
 import Loader from "../Components/Loader"
+import useAxiosGet from "../Hooks/HttpRequest"
 
 const Product = () => {
     const { id } = useParams()
     const url = `https://63fda4a1cd13ced3d7bb827e.mockapi.io/api/product/item/${ id }`
-    const [item, setItem] = useState({
-        data : null,
-        loading : true,
-        error : false
-    })
+    
 
     let content = <h1>No data</h1>
-
-    useEffect(() => {
-        axios.get(url).then(
-            response => {
-            setItem({
-                data : response.data,
-                loading : false,
-                error : false
-            })
-    
-        }).catch(() => {
-            setItem({
-                data : null,
-                loading : false,
-                error : true
-            })
-        })
-    }, [url])
+    let item = useAxiosGet(url)
 
     if (item.error) {
         content = 

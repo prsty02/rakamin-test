@@ -1,36 +1,14 @@
-import axios from "axios"
-import { useEffect, useState } from "react"
 import Card from "../Components/Card"
 import Error from "../Components/Error"
 import Loader from "../Components/Loader"
+import useAxiosGet from "../Hooks/HttpRequest"
 
 const Home = () => {
     const url = "https://63fda4a1cd13ced3d7bb827e.mockapi.io/api/product/item?page=1&limit=10"
-    const [items, setItems] = useState({
-        data : null,
-        loading : true,
-        error : false
-    })
-
-    let content = <h1>No data</h1>
-
-    useEffect(() => {
-        axios.get(url).then(
-            response => {
-            setItems({
-                data : response.data,
-                loading : false,
-                error : false
-            })
     
-        }).catch(() => {
-            setItems({
-                data : null,
-                loading : false,
-                error : true
-            })
-        })
-    }, [])
+    let content = <h1>No data</h1>
+    let items = useAxiosGet(url)
+    
 
     if (items.error) {
         content = 
