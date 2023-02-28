@@ -1,6 +1,8 @@
+import { faArrowAltCircleLeft } from "@fortawesome/free-regular-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import Error from "../Components/Error"
 import Loader from "../Components/Loader"
 
@@ -57,7 +59,13 @@ const Product = () => {
                         alt={item.data.name}
                     />
                 </div>
-                <div className=" w-full md:w-1/2 h-full p-3 flex flex-col justify-start">
+                <div className=" w-full md:w-1/2 h-full p-5 flex flex-col justify-start">
+                    <Link to={".."} className="w-full flex justify-end">
+                        <FontAwesomeIcon
+                            icon={faArrowAltCircleLeft}
+                            size="xl"
+                        />
+                    </Link>
                     <h2 className="text-xl pb-3 font-bold">
                         {item.data.name}
                     </h2>

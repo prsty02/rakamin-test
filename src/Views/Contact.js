@@ -1,6 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-
-
 const Contact = () => {
     return (
         <div className="flex flex-col justify-center w-full h-full">
