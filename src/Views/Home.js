@@ -35,7 +35,7 @@ const Home = () => {
     return(
         <div className="lg:px-48 md:px-20">
             <h1 className="font-bold text-2xl py-5 px-2">Best Seller Product</h1>
-            <div className="flex grid md:grid-cols-2 grid-cols-1 gap-4 pb-4 ">
+            <div className="flex grid md:grid-cols-2 grid-cols-1 gap-4 pb-4">
                 {content}
             </div>
 
